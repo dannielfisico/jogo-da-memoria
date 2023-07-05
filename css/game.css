@@ -38,8 +38,8 @@
 }
 
 .front {
-    background-color: rgb(150, 194, 30);
-    background-image: url(../image/cachorro.jpg);
+    background-color: rgb(250, 62, 5);
+    /* background-image: url(../image/cachorro.jpg); */
     transform: rotateY(180deg);    
 }
 
