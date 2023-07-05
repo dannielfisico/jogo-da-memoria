@@ -7,6 +7,12 @@ form {
     background-image: linear-gradient(0deg, #000000, #da6b6b);
 }
 
+form > h1 {
+    margin-bottom: 10px;
+    color: #ccc;
+    user-select: none;
+}
+
 form > img {
     width: 280px;
     padding: 30px;
