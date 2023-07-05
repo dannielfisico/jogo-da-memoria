@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     let jogador = localStorage.getItem('Jogador')
     // console.log(jogador)
-    const titulo = document.querySelector('h1')
-    titulo.innerHTML = `Player: ${jogador.toUpperCase()}`
+    const playername = document.querySelector('.player-name')
+    playername.innerHTML = `Player: ${jogador.toUpperCase()}`
+
+    let timeM = document.querySelector('.timerM')
+    let timeS = document.querySelector('.timerS')
 
     const grid = document.querySelector('.grid')
 
@@ -28,6 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const elemento = document.createElement(tag)
         elemento.className = className
         return elemento
+    }
+
+    const currentTime = () =>{
+        setInterval(() => {
+            let tempoSegundos =  +timeS.innerHTML
+            tempoSegundos++
+            let tempoMinutos = parseInt(tempoSegundos/60) 
+            if(tempoSegundos < 60){
+                timeS.innerHTML = tempoSegundos
+            } else {
+                
+            }
+           
+        }, 1000)
     }
 
     const checarCartoes = () => {
@@ -116,4 +133,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
    loadGame()
+   currentTime()
 })
