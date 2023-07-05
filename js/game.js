@@ -37,13 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
             let tempoSegundos =  +timeS.innerHTML
             tempoSegundos++
-            let tempoMinutos = parseInt(tempoSegundos/60) 
-            if(tempoSegundos < 60){
-                timeS.innerHTML = tempoSegundos
-            } else {
-                
-            }
-           
+            timeS.innerHTML = tempoSegundos
         }, 1000)
     }
 
@@ -72,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function desvirarCarta(evento) {
+      
         if (evento.target.parentNode.className.includes('revelar-carta')) {
             return
         }
@@ -134,4 +129,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
    loadGame()
    currentTime()
+   
 })
