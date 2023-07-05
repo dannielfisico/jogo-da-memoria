@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'tigre'
     ]
 
-    
+    let qtdJogadas = 0
 
     let primeiraCarta = ""
     let segundaCarta = ""
