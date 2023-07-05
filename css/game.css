@@ -1,10 +1,14 @@
 body {
     position: relative;
+    background-image: url("../image/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+
 }
 
 header{
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     padding: 30px;
     margin: auto;
     text-align: center;

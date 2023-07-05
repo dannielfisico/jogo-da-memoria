@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const playername = document.querySelector('.player-name')
     playername.innerHTML = `Player: ${jogador.toUpperCase()}`
 
+    let melhorTempo = document.querySelector('.melhorTempo')
+
     let timeM = document.querySelector('.timerM')
     let timeS = document.querySelector('.timerS')
 
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
             let tempoSegundos =  +timeS.innerHTML
             tempoSegundos++
+            
             timeS.innerHTML = tempoSegundos
         }, 1000)
     }
