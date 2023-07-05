@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         'tigre'
     ]
 
+    let primeiraCarta = ""
+    let segundaCarta = ""
+
     const criarElemento = (tag, className) => {
         const elemento = document.createElement(tag)
         elemento.className = className
@@ -27,8 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const desvirarCarta = (evento) => {
-        console.log(evento.target)
-        evento.target.setAttribute('class', 'revelar-carta')
+        if(evento.target.parentNode.className.includes('revelar-carta')){
+            return
+        }
+
+        if(primeiraCarta === ""){
+            evento.target.parentNode.classList.add('revelar-carta')
+            primeiraCarta = evento.target.parentNode
+        } else {
+            
+        }
+
+         
     }
 
 
