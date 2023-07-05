@@ -28,20 +28,46 @@ document.addEventListener("DOMContentLoaded", () => {
         return elemento
     }
 
+    const checarCartoes = () => {
+        const primeiroPersonagem = primeiraCarta.getAttribute('data-personagem')
+        const segundoPersonagem = segundaCarta.getAttribute('data-personagem')
 
-    const desvirarCarta = (evento) => {
-        if(evento.target.parentNode.className.includes('revelar-carta')){
+        if (primeiroPersonagem === segundoPersonagem){
+            primeiraCarta.firstChild.classList.add('disable-card')
+            segundaCarta.firstChild.classList.add('disable-card')
+            primeiraCarta = ""
+            segundaCarta = ""
+
+        } else {
+
+            setTimeout(() => {
+                primeiraCarta.classList.remove('revelar-carta')
+                segundaCarta.classList.remove('revelar-carta')
+                primeiraCarta = ""
+                segundaCarta = ""
+            }, 1500);
+
+            
+        }
+    }
+
+
+    function desvirarCarta(evento) {
+        if (evento.target.parentNode.className.includes('revelar-carta')) {
             return
         }
 
-        if(primeiraCarta === ""){
+        if (primeiraCarta === "") {
             evento.target.parentNode.classList.add('revelar-carta')
             primeiraCarta = evento.target.parentNode
-        } else {
-            
+        } else if (segundaCarta === "") {
+            evento.target.parentNode.classList.add('revelar-carta')
+            segundaCarta = evento.target.parentNode
+
+            checarCartoes()
         }
 
-         
+
     }
 
 
@@ -64,6 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(back)
 
         card.addEventListener('click', desvirarCarta)
+
+        card.setAttribute('data-personagem', personagem)
 
         return card
 

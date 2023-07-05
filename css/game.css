@@ -14,7 +14,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 3/4;
-    background-color: #333;
+    background-color: #020201cc;
     border-radius: 10px;
     transform-style: preserve-3d;
     transition: all .8s ease;
@@ -52,4 +52,9 @@
     background-image: url("../image/back.png");
     
     backface-visibility: hidden;
+}
+
+.disable-card {
+    filter: saturate(0);
+    opacity: .5;
 }
