@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         'tigre'
     ]
 
+    
+
     let primeiraCarta = ""
     let segundaCarta = ""
 
