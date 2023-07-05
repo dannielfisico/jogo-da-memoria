@@ -16,14 +16,19 @@
     aspect-ratio: 3/4;
     background-color: #333;
     border-radius: 10px;
-    transition: all .8s ease;
     transform-style: preserve-3d;
+    transition: all .8s ease;
 }
 
-.card:hover{
+/* .card:hover{
     transform: rotateY(180deg);
     transition: .8s;
     
+} */
+
+.revelar-carta {
+    transform: rotateY(180deg);
+    transition: .8s;
 }
 
 .face {

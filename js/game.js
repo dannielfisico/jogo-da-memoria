@@ -25,6 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         return elemento
     }
 
+
+    const desvirarCarta = (evento) => {
+        console.log(evento.target)
+        evento.target.setAttribute('class', 'revelar-carta')
+    }
+
+
+
     const createCards = (personagem) => {
         // const card = document.createElement('div')
         const card = criarElemento('div', 'card')
@@ -42,18 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(front)
         card.appendChild(back)
 
+        card.addEventListener('click', desvirarCarta)
+
         return card
 
     }
+
+    
+
 
 
     const loadGame = () => {
 
         const duplicarPersonagens = [... personagens, ...personagens]
 
-        
+        const embaralharPersonagens = duplicarPersonagens.sort(() => Math.random()-0.5)
 
-        duplicarPersonagens.forEach((personagem) => {
+        embaralharPersonagens.forEach((personagem) => {
             const cartao = createCards(personagem)
             grid.appendChild(cartao)
         })
